@@ -23,12 +23,12 @@ const round = a => {
   return Math.round(a);
 };
 
-const roundUp = a => {
-  // your code here
+let roundUp = a => {
+ return Math.ceil(a);
 };
 
 const roundDown = a => {
-  // your code here
+  return Math.floor(a);
 };
 
 const absolute = a => {
