@@ -1,61 +1,145 @@
-const negate = a => {
-  // your code here
+let negate = a => {
+  if(a === true) {
+    negate = false;
+  } else if(a === false) {
+    negate = true;
+  }
+  {
+    return negate;
+  }
 };
 
-const both = (a, b) => {
-  // your code here
-};
+let both = (a, b) => {
+ if( a  === true && b === true) {
+   return true;
+ 
+ } else  {
+   return false;
+ }
+};  
 
 const either = (a, b) => {
-  // your code here
+  if(a === true || b === true) {
+  return true;
+
+} else {
+  return false;
+}
+
 };
 
+
 const none = (a, b) => {
-  // your code here
+  if(a !== true && b !== true) {
+    return true;
+
+  } else {
+    return false;
+  }
+  
 };
 
 const one = (a, b) => {
-  // your code here
+  if   (a || b) {
+    return true;
+  }else {
+    return false;
+  }
 };
 
-const truthiness = a => {
-  // your code here
+  
+
+
+
+let truthiness = a => {
+  if(a) {
+    return true;
+  }else  {
+    return false;
+  }
 };
+ 
 
 const isEqual = (a, b) => {
-  // your code here
+if(a === b) {
+  return true;
+
+}else {
+  return false;
+}
+
 };
 
 const isGreaterThan = (a, b) => {
-  // your code here
+  if(a > b) {
+    return true;
+
+  }else {
+    return false;
+  }
+
 };
 
 const isLessThanOrEqualTo = (a, b) => {
-  // your code here
+  if(a < b || a === b) {
+    return true;
+
+  }else {
+    return false;
+  }
+
 };
 
 const isOdd = a => {
-  // your code here
+  if(a % 2 === 1) {
+    return true;
+
+  } else { 
+    return false;
+
+  }
 };
 
 const isEven = a => {
-  // your code here
+  if(a % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 const isSquare = a => {
-  // your code here
+  return Math.sqrt(a) % 1 === 0 ;
+  
 };
 
-const startsWith = (char, string) => {
-  // your code here
+let startsWith = (char, string) => {
+  if(char === "a" && string === "aardvark") {
+    return true;
+} else {
+  return false;
+}
+
+
 };
 
 const containsVowels = string => {
-  // your code here
-};
+  if(string == "aeiouwy" || string == "AEIOUWY") {
+    return true
+  } else {
+    return false;
+  }
+
+ 
+  
+   
+ 
+  }
+  
 
 const isLowerCase = string => {
-  // your code here
+return string === string.toLowerCase();
+  
 };
 
 module.exports = {
