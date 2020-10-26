@@ -39,14 +39,18 @@ const none = (a, b) => {
   
 };
 
-const one = (a, b) => {
-  if   (a || b) {
-    return true;
-  }else {
-    return false;
+let one = (a, b) => {
+  if(a === b) {
+    one = false;
+    
+  } else if(a !== b) {
+    one = true;
+
+  }
+  {
+    return one;
   }
 };
-
   
 
 
@@ -123,18 +127,13 @@ let startsWith = (char, string) => {
 
 };
 
-const containsVowels = string => {
-  if(string == "aeiouwy" || string == "AEIOUWY") {
-    return true
+const  containsVowels = string => {
+  if(string.match(/[aeiou]/gi)) {
+    return true;
   } else {
     return false;
   }
-
- 
-  
-   
- 
-  }
+};
   
 
 const isLowerCase = string => {
