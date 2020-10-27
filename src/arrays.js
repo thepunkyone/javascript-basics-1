@@ -1,5 +1,5 @@
 const getNthElement = (index, array) => {
-  // your code here
+   //your code here
 };
 
 const arrayToCSVString = array => {
@@ -51,8 +51,10 @@ const removeSpaces = string => {
 };
 
 const sumNumbers = numbers => {
-  // your code here
-};
+
+return numbers.reduce((accumulator, currentValue) => accumulator + currentValue);
+}
+
 
 const sortByLastLetter = strings => {
   // your code here
