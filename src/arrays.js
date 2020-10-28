@@ -1,53 +1,107 @@
+const { startsWith } = require("./booleans");
+
 const getNthElement = (index, array) => {
-   //your code here
+  while( index >= array.length) {
+    return array[index - array.length];
+  }
+  
+    
+  return array[index];
+  
 };
 
 const arrayToCSVString = array => {
-  // your code here
+   let New = array.join();
+  {
+    return New;
+  }
 };
 
 const csvStringToArray = string => {
-  // your code here
+  let Splt =  string.split(",");
+  {
+    return Splt;
+  }
+
 };
 
 const addToArray = (element, array) => {
-  // your code here
+array.push(element);
+
+
 };
 
 const addToArray2 = (element, array) => {
-  // your code here
+ let array2 = array.concat(element);
+ {
+ return array2;
+}
+ 
+
+ 
 };
 
 const removeNthElement = (index, array) => {
-  // your code here
+   return array.splice(index,1);
+  
 };
 
-const numbersToStrings = numbers => {
-  // your code here
+let numbersToStrings = numbers => {
+  return numbers.map(String);
+  
+  
 };
 
-const uppercaseWordsInArray = strings => {
-  // your code here
+let  uppercaseWordsInArray = strings => {
+  let Up = strings.map(index => index.toUpperCase());
+  {
+    return Up;
+  }
 };
 
 const reverseWordsInArray = strings => {
-  // your code here
+    return strings.map(string => string.split("").reverse().join(""));
+    
+  
 };
 
 const onlyEven = numbers => {
-  // your code here
+  let even = numbers.filter((item) => item % 2 === 0);
+  {
+    return even;
+  }
+  
+  
 };
 
 const removeNthElement2 = (index, array) => {
-  // your code here
+  let Secondarray = [...array];
+  
+  Secondarray.splice(2,1);
+  {
+    return Secondarray;
+  }
+
 };
 
-const elementsStartingWithAVowel = strings => {
-  // your code here
+let elementsStartingWithAVowel = strings => {
+
+ 
+  let rex = /^[aeiou]/i;
+  let results = strings.filter(strings => rex.test(strings));
+  {
+    return results;
+  }
+    
+  
+
 };
 
 const removeSpaces = string => {
-  // your code here
+
+  return string.replace(/\s+/g, '');
+ 
+  
 };
 
 const sumNumbers = numbers => {
@@ -57,7 +111,7 @@ return numbers.reduce((accumulator, currentValue) => accumulator + currentValue)
 
 
 const sortByLastLetter = strings => {
-  // your code here
+  return strings.sort((a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1));
 };
 
 module.exports = {
