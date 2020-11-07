@@ -1,9 +1,11 @@
-let createPerson = (name, age) => {
+const createPerson = (name, age) => {
   return {
   name: name,
   age: age
-  
   }
+
+  // For objects which have properties with the same name as their value variables, you can use shorthand
+  // { name, age } is the same as {name: name, age: age }
 };
 
 const getName = object => {
@@ -11,7 +13,8 @@ const getName = object => {
 };
 
 const getProperty = (property, object) => {
- return object.age;
+  // The solution: use brackets to access a property on an object by its name.
+ return object[property];
 };
 
 const hasProperty = (property, object) => {
@@ -32,43 +35,44 @@ return person.age > 65;
 const getAges = people => {
 
  
-let HowOld = people.map(people => people.age);
+const howOld = people.map(person => person.age); // use of const, camelCase, unique name for variable in the callback
+  // Note: the variable in array callback is named in singular because you are iterating over the array one person at a time.
 
-return HowOld;
+return howOld;
     
 };
 
 const findByName = (name, people) => {
-  let names = people.find(people => people.name === name);
+  const names = people.find(person => person.name === name);
 
   return names;
 };
 
 const findHondas = cars => {
-  let carH = cars.filter(cars => cars.manufacturer === 'Honda');
+  const carsH = cars.filter(car => car.manufacturer === 'Honda'); // plural cars as an array of Hondas will be returned
 
-  return carH;
+  return carsH;
 };
 
 const averageAge = people => {
   var count = 0, sumAge = 0;
 for (var key in people) {
- if (people.hasOwnProperty(key)) {
+ // if (people.hasOwnProperty(key)) {  // hasOwnProperty should only be used on objects, but people is an array
    if (people[key].hasOwnProperty("age")) {
      sumAge += people[key].age;
      count += 1;
    }
- }
+ // }
 }
-return sumAge/count; 
+return sumAge/count;
 
+// Alternative solution making use of array.reduce()
 
-
-
-
-
-
-  
+  // const totalNumberOfYears = people.reduce((years, person) => {
+  //   return years + person.age;
+  // }, 0);
+  //
+  // return totalNumberOfYears / people.length;
 };
 
 const createTalkingPerson = (name, age) => {
@@ -76,10 +80,6 @@ const createTalkingPerson = (name, age) => {
   return {
     name: name,
     age: age,
-    
-  
-
- 
  introduce: function (greeTing) {
 
   return 'Hi ' + greeTing + ', my name is ' + this.name + ' and I am ' + this.age + '!';

@@ -1,81 +1,50 @@
-let sayHello = string => {
+const sayHello = string => { // function should not reassign its own value and return itself, use a local variable for the value to return
+  let hello
   if(string === "world") {
-    sayHello = "Hello, world!";
+    hello = "Hello, world!";
   }else if(string === "MCR Codes") {
-    sayHello = "Hello, MCR Codes!";
+    hello = "Hello, MCR Codes!";
   }else if (string === "fsghjdfkhgf") {
-    sayHello = "Hello, fsghjdfkhgf!";
+    hello = "Hello, fsghjdfkhgf!";
   }
-  {
-    return sayHello;
-  }
+    return hello;
+
+  // A solution which would work with any string:
+  // return 'Hello, ' + string + !
 };
   
  
 
 
-let uppercase = string => {
+const uppercase = string => {
+  let toUpperCase
   if(string === "abc") {
-    uppercase = string.toUpperCase();
+    toUpperCase = string.toUpperCase();
   } else if(string === "def") {
-    uppercase = string.toUpperCase();
+    toUpperCase = string.toUpperCase();
   } else if (string === "ghi") {
-    uppercase = string.toUpperCase();
+    toUpperCase = string.toUpperCase();
   }
-  {
-    return uppercase;
-  }
+
+    return toUpperCase;
+
+  // or return string.toUpperCase() which will work with any string
 };
 
- let lowercase = string => {
-   if(string === "ABC") {
-     lowercase = string.toLowerCase();
-   }else if(string === "DEF") {
-     lowercase = string.toLowerCase();
-   }else if  (string === "GHI")   {
-     lowercase = string.toLowerCase();
-   }
-   {
-     return lowercase;
-   }
-  
+const lowercase = string => {
+  return string.toLowerCase();
 };
 
-let countCharacters = string => {
-  if(string === "fsfsgsfdg") {
-    countCharacters = string.length;
-  }else if (string === "fsfsg") {
-    countCharacters = string.length;
-  }else if(string === "") {
-    countCharacters = string.length;
-  }
-  {
-    return countCharacters;
-  }
+const countCharacters = string => {
+  return string.length;
 };
 
-let firstCharacter = string => {
-  if(string === "ABC") {
-    firstCharacter = string.charAt(0);
-  } else if (string === "DEF") {
-    firstCharacter = string.charAt(0);
-  } else if (string === "GHI") {
-    firstCharacter = string.charAt(0);
-  }
-  {
-    return firstCharacter;
-  }
+const firstCharacter = string => {
+  return string.charAt(0);
 };
 
-let firstCharacters = (string) => {
-  if(string === "sd32fg45") {
-    firstCharacters = string.substring(0, 4);
-  }else if(string === "asd") {
-    firstCharacters = string.substring(0, 2);
-  }
-  {
-    return firstCharacters;
-  }
+const firstCharacters = (string, numberOfCharacters) => { // Was missing second parameter - numberOfCharacters
+  return string.substring(0, numberOfCharacters);
 };
 
 module.exports = {

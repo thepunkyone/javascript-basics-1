@@ -1,15 +1,17 @@
-let negate = a => {
+const negate = a => { // the negate function should not return itself with a reassigned value, use a locally-scoped variable instead.
+  let negate
   if(a === true) {
     negate = false;
   } else if(a === false) {
     negate = true;
   }
-  {
     return negate;
-  }
+
+  // alternative solution - use ! operator to return the negate
+  // return !a
 };
 
-let both = (a, b) => {
+const both = (a, b) => {
  if( a  === true && b === true) {
    return true;
  
@@ -39,23 +41,17 @@ const none = (a, b) => {
   
 };
 
-let one = (a, b) => {
+const one = (a, b) => { // simplified if statements
   if(a === b) {
-    one = false;
-    
-  } else if(a !== b) {
-    one = true;
-
+   return false;
   }
-  {
-    return one;
-  }
+    return true;
 };
   
 
 
 
-let truthiness = a => {
+const truthiness = a => {
   if(a) {
     return true;
   }else  {
@@ -72,6 +68,9 @@ if(a === b) {
   return false;
 }
 
+// Note: This and similar if-else statements can be simplified as
+// return a === b
+// This still returns a boolean result.
 };
 
 const isGreaterThan = (a, b) => {
@@ -117,14 +116,13 @@ const isSquare = a => {
   
 };
 
-let startsWith = (char, string) => {
-  if(char === "a" && string === "aardvark") {
+const startsWith = (char, string) => {
+  // Solution: this challenge requires using array index!
+  if (string[0] === char) {
     return true;
 } else {
   return false;
 }
-
-
 };
 
 const  containsVowels = string => {
